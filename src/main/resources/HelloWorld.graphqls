@@ -1,0 +1,24 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    saying(name: String): Saying
+    listOfGrammars: [Grammar]
+    getGrammarByName(name: String!): Grammar
+}
+
+type Mutation{
+    createGrammar(name: String!, description: String!): Grammar
+}
+
+type Saying {
+    id: Long!
+    content: String!
+}
+
+type Grammar{
+    name: String!
+    description: String
+}
